@@ -5,9 +5,23 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 30,
+          "top" : 30,
+          "right" : 55,
+          "left" : 55
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "addpic_icon_menu_on@2x.png"
+      "filename" : "addpic_icon_menu_on@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJMessageViewController">
+            <connections>
+                <outlet property="userMessageBtn" destination="yxu-wO-f7g" id="S7f-l1-Qiy"/>
+                <outlet property="userMessageTable" destination="WB9-th-qBs" id="yGc-Qe-T7r"/>
+                <outlet property="userNoticeTable" destination="F1o-QV-Oaw" id="XLP-Lq-3HH"/>
+                <outlet property="userSystemTable" destination="CK5-wf-VOf" id="mr1-Ya-xpy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-th-qBs" userLabel="userTable">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="-35" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="s3d-ZL-KQI"/>
+                        <outlet property="delegate" destination="-1" id="Gp0-Pz-WiC"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="CK5-wf-VOf" userLabel="systemTable">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="-35" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="CFz-6h-C3b"/>
+                        <outlet property="delegate" destination="-1" id="hPJ-tF-cmw"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="F1o-QV-Oaw" userLabel="noticeTable">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="-35" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0th-HL-mnL"/>
+                        <outlet property="delegate" destination="-1" id="Ut8-VU-vOY"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONk-Ra-8RX" userLabel="标签条">
+                    <rect key="frame" x="0.0" y="64" width="600" height="35"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVI-g0-Uy4" customClass="ZJUserBtn">
+                            <rect key="frame" x="200" y="0.0" width="200" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="系统消息">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="systemMessageClick:" destination="-1" eventType="touchUpInside" id="MCr-nA-LgX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-Pt-b55" userLabel="广播" customClass="ZJUserBtn">
+                            <rect key="frame" x="400" y="0.0" width="200" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="广播">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="noticeMessageClick:" destination="-1" eventType="touchUpInside" id="abh-NB-bah"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-wO-f7g" customClass="ZJUserBtn">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="用户消息">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="userMessageClick:" destination="-1" eventType="touchUpInside" id="ttm-qU-cZ6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="yxu-wO-f7g" firstAttribute="leading" secondItem="ONk-Ra-8RX" secondAttribute="leading" id="0jr-MQ-0Ki"/>
+                        <constraint firstItem="IgO-Pt-b55" firstAttribute="top" secondItem="ONk-Ra-8RX" secondAttribute="top" id="2L6-ad-x6i"/>
+                        <constraint firstAttribute="bottom" secondItem="yxu-wO-f7g" secondAttribute="bottom" id="2hE-35-8N5"/>
+                        <constraint firstAttribute="bottom" secondItem="IgO-Pt-b55" secondAttribute="bottom" id="8IZ-B0-lU9"/>
+                        <constraint firstItem="GVI-g0-Uy4" firstAttribute="width" secondItem="yxu-wO-f7g" secondAttribute="width" id="Sjo-Bs-aM2"/>
+                        <constraint firstAttribute="height" constant="35" id="Ukb-hb-As0"/>
+                        <constraint firstItem="IgO-Pt-b55" firstAttribute="width" secondItem="yxu-wO-f7g" secondAttribute="width" id="WWt-ip-XoW"/>
+                        <constraint firstItem="GVI-g0-Uy4" firstAttribute="top" secondItem="ONk-Ra-8RX" secondAttribute="top" id="cH6-ya-8zD"/>
+                        <constraint firstAttribute="trailing" secondItem="IgO-Pt-b55" secondAttribute="trailing" id="fgl-42-DVR"/>
+                        <constraint firstAttribute="bottom" secondItem="GVI-g0-Uy4" secondAttribute="bottom" id="qwG-DM-k8r"/>
+                        <constraint firstItem="IgO-Pt-b55" firstAttribute="leading" secondItem="GVI-g0-Uy4" secondAttribute="trailing" id="t98-S4-Ux2"/>
+                        <constraint firstItem="GVI-g0-Uy4" firstAttribute="leading" secondItem="yxu-wO-f7g" secondAttribute="trailing" id="uob-Nz-JLG"/>
+                        <constraint firstItem="yxu-wO-f7g" firstAttribute="top" secondItem="ONk-Ra-8RX" secondAttribute="top" id="zTx-Pz-Zk9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="F1o-QV-Oaw" secondAttribute="trailing" id="4om-un-Od7"/>
+                <constraint firstAttribute="bottom" secondItem="F1o-QV-Oaw" secondAttribute="bottom" id="9EF-09-rO2"/>
+                <constraint firstAttribute="bottom" secondItem="WB9-th-qBs" secondAttribute="bottom" id="CiR-F9-Efw"/>
+                <constraint firstItem="CK5-wf-VOf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DWL-W5-sYb"/>
+                <constraint firstItem="WB9-th-qBs" firstAttribute="top" secondItem="CK5-wf-VOf" secondAttribute="top" id="Hky-7j-ZVb"/>
+                <constraint firstAttribute="trailing" secondItem="ONk-Ra-8RX" secondAttribute="trailing" id="K6h-4I-kUc"/>
+                <constraint firstAttribute="trailing" secondItem="CK5-wf-VOf" secondAttribute="trailing" id="NAy-wx-ypf"/>
+                <constraint firstItem="ONk-Ra-8RX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TJO-yH-3xA"/>
+                <constraint firstItem="WB9-th-qBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WKw-Oh-jdo"/>
+                <constraint firstItem="F1o-QV-Oaw" firstAttribute="top" secondItem="WB9-th-qBs" secondAttribute="top" id="clu-nO-8oV"/>
+                <constraint firstAttribute="trailing" secondItem="WB9-th-qBs" secondAttribute="trailing" id="dv3-fV-bgG"/>
+                <constraint firstAttribute="bottom" secondItem="CK5-wf-VOf" secondAttribute="bottom" id="hkS-da-epb"/>
+                <constraint firstItem="F1o-QV-Oaw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m8S-AH-pdO"/>
+                <constraint firstItem="ONk-Ra-8RX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="npQ-Cc-PIZ"/>
+                <constraint firstItem="WB9-th-qBs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oOR-Nr-HMb"/>
+            </constraints>
+            <point key="canvasLocation" x="427" y="230"/>
+        </view>
+    </objects>
+</document>

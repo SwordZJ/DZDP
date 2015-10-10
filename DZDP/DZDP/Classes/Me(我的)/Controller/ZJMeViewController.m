@@ -12,6 +12,8 @@
 #import "ZJUserGroupsModel.h"
 #import "ZJMeFooterView.h"
 #import "ZJMeHeaderView.h"
+#import "ZJHelpWebViewController.h"
+#import "ZJMessageViewController.h"
 #import <MJExtension.h>
 
 
@@ -45,10 +47,24 @@ static NSString *const ZJUserCellId = @"userCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupNav];
+    
+    [self setupTable];
+    
+}
+- (void)setupNav
+{
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"客服中心" titleColor:ZJColor(253, 130, 45) selectedTitleColor:nil image:nil selectedBackgroudImage:nil target:self action:@selector(helpClick)];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"personal_icon_send" selectedImage:nil target:self action:@selector(messageClick)];
+}
+// 初始化子控件
+- (void)setupTable{
+    
     [self.tableView registerClass:[ZJUserCenterCell class] forCellReuseIdentifier:ZJUserCellId];
     
-
-
+    self.tableView.backgroundColor = ZJDefaultColor;
+    
     ZJMeHeaderView *headerView = [ZJMeHeaderView meHeaderView];
     // 设置不自动调整头部视图的位置
     headerView.autoresizingMask = UIViewAutoresizingNone;
@@ -59,14 +75,25 @@ static NSString *const ZJUserCellId = @"userCell";
     
     self.tableView.sectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 10;
-    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
+#pragma mark - 事件处理
+/**
+ *  客服按钮点击，加载客服界面
+ */
+- (void)helpClick{
+    ZJHelpWebViewController *helpVc = [[ZJHelpWebViewController alloc] init];
+    [self.navigationController pushViewController:helpVc animated:YES];
 }
+/**
+ *  消息按钮点击事件，弹出消息控制器
+ */
+- (void)messageClick{
+    ZJMessageViewController *messageVc = [[ZJMessageViewController alloc] init];
+    [self.navigationController pushViewController:messageVc animated:YES];
+}
+
 
 #pragma mark - Table view data source
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -91,20 +118,5 @@ static NSString *const ZJUserCellId = @"userCell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-//    if (section == self.userGroups.count - 1) {
-//        return 70;
-//    }
-//    return 0;
-//}
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-//    if (section == self.userGroups.count - 1) {
-//       
-//    }
-//    return nil;
-//}
 
 @end

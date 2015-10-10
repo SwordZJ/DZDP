@@ -9,6 +9,7 @@
 #import "ZJTabBarController.h"
 #import "ZJBaseNavController.h"
 #import "ZJMeViewController.h"
+#import "ZJHomeTableViewController.h"
 
 @interface ZJTabBarController ()
 
@@ -20,7 +21,7 @@
     [super viewDidLoad];
     
     // 添加子控制器
-    [self addChildVcWithChildVc:[[UIViewController alloc] init] Title:@"首页" image:@"home_footbar_icon_dianping" selectedImage:@"home_footbar_icon_dianping_pressed"];
+    [self addChildVcWithChildVc:[[ZJHomeTableViewController alloc] initWithStyle:UITableViewStyleGrouped] Title:@"首页" image:@"home_footbar_icon_dianping" selectedImage:@"home_footbar_icon_dianping_pressed"];
     
     [self addChildVcWithChildVc:[[UIViewController alloc] init] Title:@"闪惠团购" image:@"home_footbar_icon_group" selectedImage:@"home_footbar_icon_group_pressed"];
     
